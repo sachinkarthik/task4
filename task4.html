@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - ProDigy Infotech</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: #0d0d0d;
+      overflow-x: hidden;
+    }
+
+    /* Stars background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(white, transparent) 1px 1px,
+                  radial-gradient(white, transparent) 1px 1px;
+      background-size: 3px 3px;
+      background-position: 0 0, 1.5px 1.5px;
+      animation: twinkle 6s infinite linear;
+      z-index: -1;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.8; }
+      to { opacity: 0.4; }
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+    }
+    nav h2 { color: #f39c12; }
+    nav ul { list-style: none; display: flex; }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover { color: #f39c12; }
+
+    /* Sections */
+    section {
+      min-height: 100vh;
+      padding: 100px 60px 40px;
+    }
+
+    #home {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    #home img {
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      border: 4px solid #f39c12;
+      margin-bottom: 20px;
+    }
+    #home h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    #home p { font-size: 1.2rem; max-width: 600px; }
+
+    #about, #projects, #contact h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #f39c12;
+    }
+
+    /* About */
+    #about p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Projects */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card h3 {
+      margin-bottom: 10px;
+      color: #f39c12;
+    }
+
+    /* Contact */
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    form input, form textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+    }
+    form button {
+      background: #f39c12;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background: #d35400;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h2>MyPortfolio</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home -->
+  <section id="home">
+    <img src="https://via.placeholder.com/150" alt="Profile">
+    <h1>Hello, I'm <span style="color:#f39c12;">Your Name</span></h1>
+    <p>A passionate Web Developer skilled in building modern and responsive websites using HTML, CSS, and JavaScript.</p>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a web developer with a strong foundation in front-end and back-end development. 
+      I have completed my education in Computer Science and gained experience through 
+      multiple projects. My focus areas include responsive web design, interactive applications, 
+      and creating seamless user experiences.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Responsive Landing Page</h3>
+        <p>A modern responsive landing page built with HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="project-card">
+        <h3>Stopwatch App</h3>
+        <p>An interactive stopwatch web app with lap functionality.</p>
+      </div>
+      <div class="project-card">
+        <h3>Tic-Tac-Toe Game</h3>
+        <p>A fun and interactive Tic-Tac-Toe game with winning logic.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Your Name | Designed with ❤</p>
+  </footer>
+
+</body>
+</html>
